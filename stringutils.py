@@ -10,4 +10,4 @@ def normalize_whitespace(s):
     return re.sub(r'\s+', ' ', s.strip())
 
 def string_id(s):
-    return re.sub('[^a-zA-Z0-9]+', '', s).lower()
+    return re.sub('[\pL\pN]+', '', s).lower()
