@@ -1,4 +1,5 @@
 import unicodedata
+import regex
 import re
 
 def remove_accents(s):
@@ -10,4 +11,4 @@ def normalize_whitespace(s):
     return re.sub(r'\s+', ' ', s.strip())
 
 def string_id(s):
-    return re.sub('[\pL\pN]+', '', s).lower()
+    return regex.sub(u'[^\p{L}]+', '', s).lower()
